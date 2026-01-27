@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROYAL SUITS</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="Your Input will always dictate your output, ✨If you input positive things, you will get positive outcome✨.png" type="image/png">
+</head>
+<body>
+  <header class="header"> 
+    <img src="ROYAL SUITS.png" alt="Royal SUITS">
+    <div class="menu-icon" id="menu-icon">&#9776;</div>
+    <div id="menu">
+      <a href="index.html">Home</a>
+      <a href="About us.html">About us</a>
+      <a href="Our store.html">Our store</a>
+      <a href="size Guidlines.html">Size Guidlines</a>
+    </div>
+  </header>
+
+  <h2>SUIT CATEGORIES</h2>
+
+  <div class="CATEGORIES">
+    <!-- Repeat your category cards here as before -->
+    <div class="category-card">
+      <a href="Double-breasted.html">
+        <div class="image-frame"><img src="IMG_7644.jpeg" alt="Double-breasted"></div>
+      </a>
+      <span class="Names">Double-breasted</span>
+    </div>
+    <!-- Add all other category-cards here -->
+  </div>
+
+  <!-- Responsive text container -->
+  <section class="landing-text">
+    <h3>We deliver anywhere in the world</h3>
+    <h2>Visit our store</h2>
+    <p>
+      They say beauty is in the eyes of the beholder. Visit us, and let your eyes truly decide.
+    </p>
+  </section>
+
+  <script>
+    const menuIcon = document.getElementById('menu-icon');
+    const menu = document.getElementById('menu');
+    menuIcon.addEventListener("click", () => {
+      menu.classList.toggle("show");
+    });
+  </script>
+</body>
+</html>
