@@ -113,3 +113,17 @@ margin-top: 2%;}
 
 .space{margin:10px;
 text-align: justify;}
+
+.color-palette {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.swatch {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
