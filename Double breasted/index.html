@@ -14,74 +14,99 @@
             <div class="image-frame">
                 <img src="images/IMG_7644.jpeg" alt="Double-breasted" class="main-image">
             </div>
-            <div class="color-palette">
+            <div class="color-controller">
+                <button class="arrow left"> &lsaquo;</button>
+            <div class="color-palette hidden">
                 <div class="swatch" data-color="images/IMG_7655.jpeg" style="background-color: white;"></div>
                 <div class="swatch" data-color="images/IMG_7656.jpeg" style="background-color: lightblue;"></div>
                 <div class="swatch" data-color="images/IMG_7678.jpeg" style="background-color: darkblue;"></div>
                 <div class="swatch" data-color="images/IMG_7679.jpeg" style="background-color: beige;"></div>
                 <div class="swatch" data-color="images/IMG_7644.jpeg" style="background-color: black;"></div>
             </div>
+            <button class="arrow right"> &rsaquo;</button>
+            </div>
             <span class="Names"> </span>
         </div>
 
         <div class="category-card">
             <div class="image-frame">
-                <img src="images/IMG_7701.jpeg" alt="Double-breasted">
+                <img src="images/IMG_7701.jpeg" alt="Double-breasted" class="main-image"> 
             </div>
-             <div class="color-palette">
+            <div class="color-controller">
+                <button class="arrow left"> &lsaquo;</button>
+             <div class="color-palette hidden">
     
                 <div class="swatch" data-color="images/IMG_7702.jpeg" style="background-color: lightblue;"></div>
                 <div class="swatch" data-color="images/IMG_7703.jpeg" style="background-color: darkblue;"></div>
                 <div class="swatch" data-color="images/IMG_7701.jpeg" style="background-color: palegreen;"></div>
             </div>
+            <button class="arrow right"> &rsaquo;</button>
+            </div>
             <span class="Names"></span>
         </div>
         <div class="category-card">
             <div class="image-frame">
-                <img src="images/IMG_7715.jpeg" alt="Double-breasted">
+                <img src="images/IMG_7715.jpeg" alt="Double-breasted" class="main-image">
             </div>
-             <div class="color-palette">
+            <div class="color-controller">
+                <button class="arrow left"> &lsaquo;</button>
+             <div class="color-palette hidden">
     
                 <div class="swatch" data-color="images/IMG_7712.jpeg" style="background-color: darkblue;"></div>
                 <div class="swatch" data-color="images/IMG_7713.jpeg" style="background-color: beige;"></div>
                 <div class="swatch" data-color="images/IMG_7714.jpeg" style="background-color: brown;"></div>
                 <div class="swatch" data-color="images/IMG_7715.jpeg" style="background-color: darkolivegreen;"></div>
             </div>
+            <button class="arrow right"> &rsaquo;</button>
+            </div>
             <span class="Names"></span>
         </div><div class="category-card">
             <div class="image-frame">
-                <img src="images/IMG_7704.jpeg" alt="Double-breasted">
+                <img src="images/IMG_7704.jpeg" alt="Double-breasted" class="main-image">
             </div>
-             <div class="color-palette">
+            <div class="color-controller">
+                <button class="arrow left"> &lsaquo;</button>
+             <div class="color-palette hidden">
     
                 <div class="swatch" data-color="images/IMG_7704.jpeg" style="background-color: pink;"></div>
                 <div class="swatch" data-color="images/IMG_7705.jpeg" style="background-color: darkblue;"></div>
                 <div class="swatch" data-color="images/IMG_7706.jpeg" style="background-color: black;"></div>
             </div>
+            <button class="arrow right"> &rsaquo;</button>
+            </div>
             <span class="Names"></span>
         </div><div class="category-card">
             <div class="image-frame">
-                <img src="images/IMG_7730.jpeg" alt="Double-breasted">
+                <img src="images/IMG_7730.jpeg" alt="Double-breasted" class="main-image">
             </div>
-             <div class="color-palette">
+            <div class="color-controller">
+                <button class="arrow left"> &lsaquo;</button>
+             <div class="color-palette hidden">
     
                 <div class="swatch" data-color="images/IMG_7728.jpeg" style="background-color: beige;"></div>
                 <div class="swatch" data-color="images/IMG_7729.jpeg" style="background-color: darkgreen;"></div>
                 <div class="swatch" data-color="images/IMG_7730.jpeg" style="background-color: brown;"></div>
             </div>
+            <button class="arrow right"> &rsaquo;</button>
+            </div>
             <span class="Names"></span>
+
         </div><div class="category-card">
             <div class="image-frame">
-                <img src="images/IMG_7708.jpeg" alt="Double-breasted">
+                <img src="images/IMG_7708.jpeg" alt="Double-breasted" class="main-image">
             </div>
-             <div class="color-palette">
+            <div class="color-controller">
+                <button class="arrow left"> &lsaquo;</button>
+             <div class="color-palette hidden">
     
                 <div class="swatch" data-color="images/IMG_7711.jpeg" style="background-color: beige;"></div>
                 <div class="swatch" data-color="images/IMG_7708.jpeg" style="background-color: darkblue;"></div>
                  <div class="swatch" data-color="images/IMG_7707.jpeg" style="background-color: black;"></div>
                  <div class="swatch" data-color="images/IMG_7709.jpeg" style="background-color: royalblue;"></div>
-                 <div class="swatch" data-color="images/IMG_7712.jpeg" style="background-color: white;"></div>
+                
 
+            </div>
+            <button class="arrow right"> &rsaquo;</button>
             </div>
             <span class="Names"> </span>
         </div>
@@ -92,14 +117,30 @@
 
     </div>
 <script>
-    const swatches = document.querySelectorAll (".swatch");
-    swatches.forEach (swatch => {
-        swatch.addEventListener ("click", () =>{
-            const newImage = swatch.getAttribute("data-color");
-            const mainImage = swatch.closest (".category-card") .querySelector (".main-image");
-            mainImage.src =newImage;
-        });
+    document.querySelectorAll('.category-card').forEach(card => {
+
+    const swatches = card.querySelectorAll('.swatch');
+    const mainImage = card.querySelector('.main-image');
+    const leftArrow = card.querySelector('.arrow.left');
+    const rightArrow = card.querySelector('.arrow.right');
+
+    let currentIndex = 0;
+
+    function updateImage() {
+        mainImage.src = swatches[currentIndex].dataset.color;
+    }
+
+    rightArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % swatches.length;
+        updateImage();
     });
+
+    leftArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + swatches.length) % swatches.length;
+        updateImage();
+    });
+
+});
     const menuIcon = document.getElementById('menu-icon');
     const menu = document.getElementById('menu');
     menuIcon.addEventListener("click", () => {

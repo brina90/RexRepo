@@ -18,13 +18,12 @@ H2{text-align: center; margin-top: 10px;margin-bottom:10px; font-family: Georgia
 }
 @media (min-width:1025px){
     .CATEGORIES{
-        grid-template-columns: repeat (auto-fit, minmax (150px,1fr));}
+        grid-template-columns: repeat(auto-fit, minmax (150px,1fr));}
 }
 .category-card{
     display: flex;
-    flex-direction: column;
-    ;
     height: 100%;
+    flex-direction: column;
     border-radius: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -116,11 +115,12 @@ text-align: justify;}
 
 .color-palette {
     display: flex;
-    gap: 30px;
+    gap: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
     justify-content: center;
     align-items: center;
+    min-height: 40px;
 }
 
 .swatch {
@@ -137,3 +137,39 @@ text-align: justify;}
     border: 2px solid darkorange;
     transition: transform 0.2s, border 0.2;
 }
+
+h2.breasted{margin-bottom:20px ;}
+
+.color-controller{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+
+}
+.color-palette.hidden{
+    display: none;
+}
+
+.arrow{
+    all: unset;
+    display: flex;
+    background-color: transparent;
+    border: 1px solid darkorange;
+    color:white;
+    font-size: 40px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    
+    
+}
+
+.arrow:hover{
+    background-color: gray;
+}
+
