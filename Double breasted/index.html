@@ -44,6 +44,9 @@
             </div>
             <span class="Names"></span>
         </div>
+
+
+
         <div class="category-card">
             <div class="image-frame">
                 <img src="images/IMG_7715.jpeg" alt="Double-breasted" class="main-image">
@@ -60,7 +63,11 @@
             <button class="arrow right"> &rsaquo;</button>
             </div>
             <span class="Names"></span>
-        </div><div class="category-card">
+        </div>
+
+
+
+        <div class="category-card">
             <div class="image-frame">
                 <img src="images/IMG_7704.jpeg" alt="Double-breasted" class="main-image">
             </div>
@@ -75,7 +82,10 @@
             <button class="arrow right"> &rsaquo;</button>
             </div>
             <span class="Names"></span>
-        </div><div class="category-card">
+        </div>
+        
+        
+        <div class="category-card">
             <div class="image-frame">
                 <img src="images/IMG_7730.jpeg" alt="Double-breasted" class="main-image">
             </div>
@@ -91,7 +101,11 @@
             </div>
             <span class="Names"></span>
 
-        </div><div class="category-card">
+        </div>
+        
+        
+        
+        <div class="category-card">
             <div class="image-frame">
                 <img src="images/IMG_7708.jpeg" alt="Double-breasted" class="main-image">
             </div>
@@ -113,9 +127,101 @@
 
 
 
+        
+        <div class="category-card">
+            <div class="image-frame">
+                <img src="images/IMG_7718.jpeg" alt="Double-breasted" class="main-image">
+            </div>
+            <div class="color-controller">
+                <button class="arrow left"> &lsaquo;</button>
+            <div class="color-palette hidden">
+                <div class="swatch" data-color="images/IMG_7718.jpeg" style="background-color: white;"></div>
+                <div class="swatch" data-color="images/IMG_7716.jpeg" style="background-color: lightblue;"></div>
+                <div class="swatch" data-color="images/IMG_7719.jpeg" style="background-color: darkblue;"></div>
+                <div class="swatch" data-color="images/IMG_7720.jpeg" style="background-color: beige;"></div>
+                <div class="swatch" data-color="images/IMG_7721.jpeg" style="background-color: black;"></div>
+                <div class="swatch" data-color="images/IMG_7722.jpeg" style="background-color: black;"></div>
+                <div class="swatch" data-color="images/IMG_7723.jpeg" style="background-color: black;"></div>
+            </div>
+            <button class="arrow right"> &rsaquo;</button>
+            </div>
+            <span class="Names"> </span>
+        </div>
+
+
+        <div class="category-card">
+            <div class="image-frame">
+                <img src="images/IMG_7725.jpeg" alt="Double-breasted" class="main-image">
+            </div>
+            <div class="color-controller">
+                <button class="arrow left"> &lsaquo;</button>
+             <div class="color-palette hidden">
+    
+                <div class="swatch" data-color="images/IMG_7725.jpeg" style="background-color: beige;"></div>
+                <div class="swatch" data-color="images/IMG_7724.jpeg" style="background-color: darkblue;"></div>
+                 <div class="swatch" data-color="images/IMG_7726.jpeg" style="background-color: black;"></div>
+                 <div class="swatch" data-color="images/IMG_7727.jpeg" style="background-color: royalblue;"></div>
+                
+
+            </div>
+            <button class="arrow right"> &rsaquo;</button>
+            </div>
+            <span class="Names"> </span>
+        </div>
+
+
+
+        <div class="category-card">
+            <div class="image-frame">
+                <img src="images/IMG_7751.jpeg" alt="Double-breasted" class="main-image">
+            </div>
+            <div class="color-controller">
+                <button class="arrow left"> &lsaquo;</button>
+             <div class="color-palette hidden">
+    
+                <div class="swatch" data-color="images/IMG_7751.jpeg" style="background-color: white;"></div>
+                <div class="swatch" data-color="images/IMG_7746.jpeg" style="background-color: darkblue;"></div>
+                <div class="swatch" data-color="images/IMG_7747.jpeg" style="background-color: beige;"></div>
+                <div class="swatch" data-color="images/IMG_7748.jpeg" style="background-color: black;"></div>
+                <div class="swatch" data-color="images/IMG_7750.jpeg" style="background-color: black;"></div>
+                <div class="swatch" data-color="images/IMG_7752.jpeg" style="background-color: black;"></div>
+                <div class="swatch" data-color="images/IMG_7753.jpeg" style="background-color: black;"></div>
+                
+
+            </div>
+            <button class="arrow right"> &rsaquo;</button>
+            </div>
+            <span class="Names"> </span>
+        </div>
+
+        <div class="category-card">
+            <div class="image-frame">
+                <img src="images/IMG_7755.jpeg" alt="Double-breasted" class="main-image">
+            </div>
+            <div class="color-controller">
+                <button class="arrow left"> &lsaquo;</button>
+             <div class="color-palette hidden">
+    
+                <div class="swatch" data-color="images/IMG_7755.jpeg" style="background-color: beige;"></div>
+                <div class="swatch" data-color="images/IMG_7756.jpeg" style="background-color: darkblue;"></div>
+                 <div class="swatch" data-color="images/IMG_7757.jpeg" style="background-color: black;"></div>
+                
+
+            </div>
+            <button class="arrow right"> &rsaquo;</button>
+            </div>
+            <span class="Names"> </span>
+        </div>
+
+
 
 
     </div>
+
+    <div id="zoom-overlay" class="hidden">
+    <img id="zoomed-image" alt="zoomed view">
+</div>
+
 <script>
     document.querySelectorAll('.category-card').forEach(card => {
 
@@ -143,10 +249,30 @@
 });
     const menuIcon = document.getElementById('menu-icon');
     const menu = document.getElementById('menu');
+
+    if (menuIcon && menu){
     menuIcon.addEventListener("click", () => {
       menu.classList.toggle("show");
     });
+}
 
+
+const zoomOverlay = document.getElementById('zoom-overlay');
+const zoomedImage = document.getElementById('zoomed-image');
+
+// Select all main images
+document.querySelectorAll('.main-image').forEach(img => {
+    img.addEventListener('click', () => {
+        zoomedImage.src = img.src;   // Set zoomed image to clicked image
+        zoomOverlay.classList.remove('hidden'); // Show overlay
+    });
+});
+
+// Click overlay to close
+zoomOverlay.addEventListener('click', () => {
+    zoomOverlay.classList.add('hidden');
+    zoomedImage.src = ''; // Clear src (optional)
+});
 
 </script>
 </body>
