@@ -28,13 +28,14 @@ H2{text-align: center; margin-top: 10px;margin-bottom:10px; font-family: Georgia
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.category-card :hover{
+.category-card:hover{
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 .Names{margin-top: 8px;
 text-align: center;
-font-weight: bold;}
+font-weight: bold;
+ font-family: Georgia, Times, 'Times New Roman', serif;}
 
 .image-frame{border: 1px solid darkorange; 
     border-radius: 10px;
@@ -141,16 +142,6 @@ text-align: justify;}
 
 h2.breasted{margin-bottom:20px ;}
 
-.color-controller{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
-
-}
-.color-palette.hidden{
-    display: none;
-}
 
 .arrow{
     all: unset;
@@ -224,4 +215,3 @@ h2.breasted{margin-bottom:20px ;}
 .main-image{ touch-action: none;}
 
 
-.Names{ font-family: Georgia, Times, 'Times New Roman', serif;}
