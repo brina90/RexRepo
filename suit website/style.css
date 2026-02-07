@@ -28,7 +28,7 @@ H2{text-align: center; margin-top: 10px;margin-bottom:10px; font-family: Georgia
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.category-card:hover{
+.category-card :hover{
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -191,3 +191,37 @@ h2.breasted{margin-bottom:20px ;}
     border-radius: 10px;
 }
 #zoom-overlay.hidden { display: none; }
+
+
+
+
+.dots-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+.dot.active {
+    background-color: darkorange;
+}
+
+
+.category-cards{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.main-image{ touch-action: none;}
+
+
+.Names{ font-family: Georgia, Times, 'Times New Roman', serif;}
