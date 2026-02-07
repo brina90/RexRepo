@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double-Brested</title>
+    <link rel="stylesheet" href="../suit website/style.css">
+</head>
+<body>
+    <h2 class="breasted">THREE-PIECE</h2>
+
+    <div class="CATEGORIES">
+        <div class="category-cards">
+            <div class="image-frame">
+                <img src="images/IMG_7809.jpeg" alt="Three piece" class="main-image">
+            </div>
+            <div class="dots-container"></div>
+            <span class="Names"> Rivolli Pinestriped suit</span>
+            
+        </div>
+
+
+
+
+        <div class="category-cards">
+            <div class="image-frame">
+                <img src="images/IMG_7815.jpeg" alt="Three piece" class="main-image"> 
+            </div>
+            <div class="dots-container"></div>
+            <span class="Names"> Slimfit double...</span>
+        </div>
+
+
+
+        <div class="category-cards">
+            <div class="image-frame">
+                <img src="images/IMG_7818.jpeg" alt="Three piece" class="main-image">
+            </div>
+            <div class="dots-container"></div>
+            <span class="Names">Centurion Double..</span>
+        </div>
+
+
+
+        <div class="category-cards">
+            <div class="image-frame">
+                <img src="images/IMG_7849.jpeg" alt="Three piece" class="main-image">
+            </div>
+            <div class="dots-container">
+            </div>
+            <span class="Names">Strapped Double...</span>
+        </div>
+        
+        
+        <div class="category-cards">
+            <div class="image-frame">
+                <img src="images/IMG_7855.jpeg" alt="Three piece" class="main-image">
+            </div>
+            <div class="dots-container">
+            </div>
+            <span class="Names"> Classic Double...</span>
+
+        </div>
+        
+        
+        
+        <div class="category-cards">
+            <div class="image-frame">
+                <img src="images/IMG_7868.jpeg" alt="Three piece" class="main-image">
+            </div>
+            <div class="dots-container">
+            </div>
+            <span class="Names"> Daro Double...</span>
+        </div>
+
+
+
+        
+        <div class="category-cards">
+            <div class="image-frame">
+                <img src="images/IMG_7876.jpeg" alt="Three piece" class="main-image">
+            </div>
+            <div class="dots-container">
+            </div>
+            <span class="Names">Marco Lorenzo suit </span>
+        </div>
+
+
+        <div class="category-cards">
+            <div class="image-frame">
+                <img src="images/IMG_7881.jpeg" alt="Three piece" class="main-image">
+            </div>
+            <div class="dots-container">
+            </div>
+            <span class="Names"> Vega Suit</span>
+        </div>
+
+
+
+        <div class="category-cards">
+            <div class="image-frame">
+                <img src="images/IMG_7898.jpeg" alt="Three piece" class="main-image">
+            </div>
+            <div class="dots-container">
+            </div>
+            <span class="Names">Arare Suit </span>
+        </div>
+
+        <div class="category-cards">
+            <div class="image-frame">
+                <img src="images/IMG_7901.jpeg" alt="Three piece" class="main-image">
+            </div>
+            <div class="dots-container">
+            </div>
+            <span class="Names"> Pinstripe suit</span>
+        </div>
+
+
+        <div class="category-cards">
+            <div class="image-frame">
+                <img src="images/IMG_7908.jpeg" alt="Three piece" class="main-image">
+            </div>
+            <div class="dots-container">
+            </div>
+            <span class="Names"> Pinstripe suit</span>
+        </div>
+
+        <div class="category-cards">
+            <div class="image-frame">
+                <img src="images/IMG_7919.jpeg" alt="Three piece" class="main-image">
+            </div>
+            <div class="dots-container">
+            </div>
+            <span class="Names"> Pinstripe suit</span>
+        </div>
+
+        <div class="category-cards">
+            <div class="image-frame">
+                <img src="images/IMG_7922.jpeg" alt="Three piece" class="main-image">
+            </div>
+            <div class="dots-container">
+            </div>
+            <span class="Names"> Pinstripe suit</span>
+        </div>
+
+
+        <div class="category-cards">
+            <div class="image-frame">
+                <img src="images/IMG_7931.jpeg" alt="Three piece" class="main-image">
+            </div>
+            <div class="dots-container">
+            </div>
+            <span class="Names"> Pinstripe suit</span>
+        </div>
+
+
+
+
+    </div>
+
+    <div id="zoom-overlay" class="hidden">
+    <img id="zoomed-image" alt="zoomed view">
+</div>
+
+<script>// Array of images per card
+const cardImages = [
+    ["images/IMG_7809.jpeg","images/IMG_7810.jpeg", "images/IMG_7814.jpeg", "images/IMG_7830.jpeg", "images/IMG_7831.jpeg","images/IMG_7905.jpeg","images/IMG_7906.jpeg","images/IMG_7907.jpeg"]
+    ["images/IMG_7815.jpeg","images/IMG_7816.jpeg","images/IMG_7817.jpeg"],
+    ["images/IMG_7818.jpeg","images/IMG_7819.jpeg","images/IMG_7820.jpeg","images/IMG_7821.jpeg","images/IMG_7822.jpeg", "images/IMG_7823.jpeg","images/IMG_7824.jpeg"],
+    ["images/IMG_7849.jpeg","images/IMG_7850.jpeg","images/IMG_7851.jpeg", "images/IMG_7852.jpeg", "images/IMG_7853.jpeg", "images/IMG_7854.jpeg"],
+    ["images/IMG_7855.jpeg","images/IMG_7856.jpeg","images/IMG_7857.jpeg", "images/IMG_7858.jpeg","images/IMG_7859.jpeg","images/IMG_7860.jpeg","images/IMG_7928.jpeg","images/IMG_7929.jpeg","images/IMG_7930.jpeg"],
+    ["images/IMG_7868.jpeg","images/IMG_7869.jpeg","images/IMG_7870.jpeg","images/IMG_7871.jpeg","images/IMG_7872.jpeg","images/IMG_7873.jpeg","images/IMG_7874.jpeg","images/IMG_7875.jpeg"],
+    ["images/IMG_7876.jpeg","images/IMG_7877.jpeg","images/IMG_7878.jpeg","images/IMG_7879.jpeg","images/IMG_7880.jpeg"],
+    ["images/IMG_7881.jpeg","images/IMG_7882.jpeg","images/IMG_7883.jpeg","images/IMG_7884.jpeg","images/IMG_7886.jpeg","images/IMG_7887.jpeg","images/IMG_7888.jpeg","images/IMG_7889.jpeg","images/IMG_7891.jpeg","images/IMG_7892.jpeg","images/IMG_7893.jpeg","images/IMG_7895.jpeg","images/IMG_7896.jpeg", "images/IMG_7897.jpeg"],
+    ["images/IMG_7898.jpeg","images/IMG_7899.jpeg","images/IMG_7900.jpeg"],
+    ["images/IMG_7901.jpeg","images/IMG_7902.jpeg","images/IMG_7903.jpeg"],
+    ["images/IMG_7908.jpeg","images/IMG_7909.jpeg","images/IMG_7910.jpeg","images/IMG_7911.jpeg","images/IMG_7912.jpeg","images/IMG_7913.jpeg","images/IMG_7914.jpeg","images/IMG_7915.jpeg","images/IMG_7916.jpeg","images/IMG_7917.jpeg","images/IMG_7918.jpeg"]
+    ["images/IMG_7919.jpeg","images/IMG_7920.jpeg","images/IMG_7921.jpeg"],
+    ["images/IMG_7922.jpeg","images/IMG_7923.jpeg","images/IMG_7924.jpeg","images/IMG_7925.jpeg","images/IMG_7926.jpeg","images/IMG_7927.jpeg"]
+    ["images/IMG_7931.jpeg","images/IMG_7932.jpeg","images/IMG_7933.jpeg","images/IMG_7934.jpeg","images/IMG_7935.jpeg","images/IMG_7936.jpeg","images/IMG_7937.jpeg","images/IMG_7938.jpeg","images/IMG_7939.jpeg"]
+    // Add more arrays for new cards
+];
+
+// Loop through each card
+document.querySelectorAll('.category-cards').forEach((card, index) => {
+    const mainImage = card.querySelector('.main-image');
+    let currentIndex = 0;
+
+    // Generate dots
+    const dotsContainer = card.querySelector('.dots-container');
+    cardImages[index].forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if(i === 0) dot.classList.add('active'); // first dot active
+        dotsContainer.appendChild(dot);
+    });
+    const dots = dotsContainer.querySelectorAll('.dot');
+
+    // Update image + dots
+    function updateImage() {
+        mainImage.src = cardImages[index][currentIndex];
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+    }
+
+    // Swipe + zoom detection
+    let startX = 0, startY = 0, isSwiping = false;
+
+    mainImage.addEventListener('pointerdown', e => {
+    startX = e.clientX;
+    startY = e.clientY;
+    isSwiping = false;
+    mainImage.setPointerCapture(e.pointerId); // ← ensures we capture all pointer events
+});
+
+mainImage.addEventListener('pointermove', e => {
+    if (Math.abs(e.clientX - startX) > 5 || Math.abs(e.clientY - startY) > 5) {
+        isSwiping = true;
+        e.preventDefault(); // ← stops page scroll while swiping
+    }
+}, { passive: false});
+
+    mainImage.addEventListener('pointerup', e => {
+        const diffX = e.clientX - startX;
+        if (isSwiping) {
+            // Swipe left/right
+            if (diffX < -30) currentIndex = (currentIndex + 1) % cardImages[index].length;
+            if (diffX > 30) currentIndex = (currentIndex - 1 + cardImages[index].length) % cardImages[index].length;
+            updateImage();
+        } else {
+            // Zoom if no swipe
+            zoomedImage.src = mainImage.src;
+            zoomOverlay.classList.remove('hidden');
+        }
+    });
+
+    // Initialize first image + dots
+    updateImage();
+});
+
+// Zoom overlay
+const zoomOverlay = document.getElementById('zoom-overlay');
+const zoomedImage = document.getElementById('zoomed-image');
+
+zoomOverlay.addEventListener('click', () => {
+    zoomOverlay.classList.add('hidden');
+    zoomedImage.src = '';
+});
+</script>
+</body>
+</html>
