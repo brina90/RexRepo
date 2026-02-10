@@ -193,12 +193,12 @@ h2.breasted{margin-bottom:20px ;}
   will-change: opacity, transform;
 }
 .reveal.from-left {
-  transform: translateX(-120px);
+  transform: translateX(-20px);
 }
 
 /* Cards coming from the right */
 .reveal.from-right {
-  transform: translateX(120px);}
+  transform: translateX(20px);}
 .reveal.active {
   opacity: 1;
   transform: translateX(0);
