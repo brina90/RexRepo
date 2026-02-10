@@ -186,13 +186,19 @@ h2.breasted{margin-bottom:20px ;}
 
 
 .reveal {
-  opacity: 0;
+  opacity: 0.25;
   transform: translateX(-50px); /* slightly smaller distance */
   transition: opacity 5s cubic-bezier(0.5, 0, 0.2, 0.1),
               transform 5s cubic-bezier(0.5, 0, 02, 0.1);
   will-change: opacity, transform;
 }
+.reveal.from-left {
+  transform: translateX(-120px);
+}
 
+/* Cards coming from the right */
+.reveal.from-right {
+  transform: translateX(120px);}
 .reveal.active {
   opacity: 1;
   transform: translateX(0);

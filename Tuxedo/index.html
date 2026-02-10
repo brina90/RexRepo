@@ -466,6 +466,17 @@ zoomOverlay.addEventListener('click', () => {
 
 
 const reveals = document.querySelectorAll(".reveal");
+
+// 👇 ADD THIS BLOCK HERE
+reveals.forEach((card, index) => {
+  if (index % 2 === 0) {
+    card.classList.add("from-left");
+  } else {
+    card.classList.add("from-right");
+  }
+});
+
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach(entry => {
