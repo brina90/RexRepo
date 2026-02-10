@@ -414,12 +414,10 @@ document.querySelectorAll('.category-cards').forEach((card, index) => {
     const mainImage = card.querySelector('.main-image');
     let currentIndex = 0;
 
-    
-
+   
     // Update image + dots
     function updateImage() {
         mainImage.src = cardImages[index][currentIndex];
-        
     }
 
     // Swipe + zoom detection
@@ -448,7 +446,6 @@ mainImage.addEventListener('pointermove', e => {
             updateImage();
         } else {
             // Zoom if no swipe
-            
             zoomedImage.src = mainImage.src;
             zoomOverlay.classList.remove('hidden');
         }
@@ -462,7 +459,7 @@ mainImage.addEventListener('pointermove', e => {
 const zoomOverlay = document.getElementById('zoom-overlay');
 const zoomedImage = document.getElementById('zoomed-image');
 
-zoomOverlay.addEventListener('pointerdown', () => {
+zoomOverlay.addEventListener('click', () => {
     zoomOverlay.classList.add('hidden');
     zoomedImage.src = '';
 });
