@@ -185,23 +185,17 @@ h2.breasted{margin-bottom:20px ;}
 
 
 
-
-.dots-container {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    margin-top: 10px;
+.reveal {
+  opacity: 0;
+  transform: translateX(-100px); /* slightly smaller distance */
+  transition: opacity 5s cubic-bezier(0.5, 0, 0.2, 0.1),
+              transform 5s cubic-bezier(0.5, 0, 02, 0.1);
+  will-change: opacity, transform;
 }
 
-.dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: gray;
-}
-
-.dot.active {
-    background-color: darkorange;
+.reveal.active {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 
