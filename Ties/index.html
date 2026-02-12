@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double-Breasted</title>
+    <link rel="stylesheet" href="../suit website/style.css">
+</head>
+<body>
+    <h2 class="breasted"> TUXEDOS</h2>
+
+   <div class="CATEGORIES"></div>
+
+    <template id="card-template">
+    <div class="category-cards reveal">
+        <div class="image-frame">
+            <img class="main-image" alt="Suit image">
+        </div>
+        <div class="dots-container"></div>
+        <span class="Names"></span>
+    </div>
+    </template>
+
+
+    <div id="zoom-overlay" class="hidden">
+    <img id="zoomed-image" alt="zoomed view">
+    </div>
+
+ 
+
+
+<script>// Array of images per card
+const cardImages = [
+   { name: "Marco Lorenzo Tux (White)", image: "images/IMG_8127.jpeg" }, 
+   { name: "Marco Lorenzo Tux (Black)", image: "images/IMG_8128.jpeg" },  
+   { name: "Piped Shawl Tux (White)", image: "images/IMG_8129.jpeg" },  
+   { name: "Piped Shawl Tux (Black)", image: "images/IMG_8130.jpeg" },  
+   { name: "Embellished Tux (White)", image: "images/IMG_8131.jpeg" },  
+   { name: "Embellished Tux (Black)", image: "images/IMG_8132.jpeg" },  
+   { name: "Sequined Lapel Tux (Black)", image: "images/IMG_8133.jpeg" },  
+   { name: "Starburst Tux (Blue)", image: "images/IMG_8134.jpeg" },  
+   { name: "Starburst Tux (Black)", image: "images/IMG_8135.jpeg" },  
+   { name: "Starburst Tux (White)", image: "images/IMG_8136.jpeg" },  
+   { name: "Starburst Tux (Gold)", image: "images/IMG_8137.jpeg" },  
+   { name: "Double-breasted Shawl", image: "images/IMG_8055.jpeg" },  
+   { name: "Double-breasted Peak (Black)", image: "images/IMG_8138.jpeg" },  
+   { name: "Double-Breasted Peak (White)", image: "images/IMG_8139.jpeg" },  
+   { name: "Sparkle Shawl Tux", image: "images/IMG_8140.jpeg" },  
+   { name: "Paisley Tux (Blue)", image: "images/IMG_8141.jpeg" },  
+   { name: "Paisley Tux (Black)", image: "images/IMG_8142.jpeg" },  
+   { name: "Paisley Tux (Red)", image: "images/IMG_8143.jpeg" },  
+   { name: "Paisley Tux (Purple)", image: "images/IMG_8144.jpeg" },  
+   { name: "Paisley Tux (Light Blue)", image: "images/IMG_8145.jpeg" },  
+   { name: "Paisley Tux (Beige)", image: "images/IMG_8056.jpeg" },  
+   { name: "Paisley Tux (White)", image: "images/IMG_8048.jpeg" },  
+   { name: "Paisley (Mario Casas) White", image: "images/IMG_8049.jpeg" },  
+   { name: "Paisley (Mario Casas) Red", image: "images/IMG_8050.jpeg" },   
+   { name: "Paisley (Mario Casas) Blue", image: "images/IMG_8052.jpeg" },  
+   { name: "Paisley (Mario Casas) Black", image: "images/IMG_8053.jpeg" },  
+   { name: "Paisley (Mario Casas) Green", image: "images/IMG_8054.jpeg" },  
+   { name: "Bilbao (Black)", image: "images/IMG_8057.jpeg" },  
+   { name: "Bilbao (White)", image: "images/IMG_8058.jpeg" },  
+   { name: "Plain Three-piece Tux (Black)", image: "images/IMG_8059.jpeg" },  
+   { name: "Plain Three-piece Tux (Burgundy)", image: "images/IMG_8060.jpeg" },  
+   { name: "Jacquard Tux (Black)", image: "images/11.jpeg" },  
+   { name: "Jacquard Tux (Beige)", image: "images/IMG_1.jpeg" },  
+   { name: "Jacquard Tux (Green)", image: "images/2.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/3.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/4.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/5.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/6.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/7.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/8.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/9.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/10.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/11.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/12.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/13.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/14.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/15.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/16.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/17.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/18.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/19.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/20.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/21.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/22.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/23.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/24.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/25.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/26.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/27.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/28.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/29.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/30.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/31.jpeg" },
+   { name: "Jacquard Tux (Green)", image: "images/32.jpeg" },  
+    
+
+    // Add more arrays for new cards
+];
+
+// Get template and container
+const template = document.getElementById("card-template");
+const container = document.querySelector(".CATEGORIES");
+
+// Zoom elements
+const zoomOverlay = document.getElementById('zoom-overlay');
+const zoomedImage = document.getElementById('zoomed-image');
+
+// Build each card dynamically
+cardImages.forEach(item => {
+  const clone = template.content.cloneNode(true);
+
+  const img = clone.querySelector(".main-image");
+  const name = clone.querySelector(".Names");
+
+  img.src = item.image;
+  name.textContent = item.name;
+
+  // Zoom on click
+  img.addEventListener('click', () => {
+    zoomedImage.src = img.src;
+    zoomOverlay.classList.remove('hidden');
+  });
+
+  container.appendChild(clone);
+});
+
+// Close zoom overlay
+zoomOverlay.addEventListener('click', () => {
+  zoomOverlay.classList.add('hidden');
+  zoomedImage.src = '';
+});
+
+
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // only add active if not already added
+        if (!entry.target.classList.contains("active")) {
+          // small delay for stagger effect
+          setTimeout(() => {
+            entry.target.classList.add("active");
+          }, 50); // can adjust delay
+        }
+      } else {
+        entry.target.classList.remove("active");
+      }
+    });
+  },
+  {
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px"
+  }
+);
+
+reveals.forEach(reveal => observer.observe(reveal));
+
+</script>
+</body>
+</html>
