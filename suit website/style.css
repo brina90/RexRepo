@@ -218,3 +218,19 @@ h2.breasted{margin-bottom:20px ;}
 .main-image{ touch-action: none;}
 
 
+.size{margin: 20px; text-align: justify;}
+
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-left: 30px;
+  
+}
+
+th, td {
+  border: 1px solid gray;
+  padding: 10px;
+  text-align: center;
+  
+}
+
