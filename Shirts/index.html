@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double-Breasted</title>
+    <link rel="stylesheet" href="../suit website/style.css">
+</head>
+<body>
+    <h2 class="breasted">CORPORATE SHIRTS</h2>
+    <div class="CATEGORIES"></div>
+
+    <template id="card-template">
+    <div class="category-cards reveal">
+        <div class="image-frame">
+            <img class="main-image" alt="Suit image">
+        </div>
+        <div class="dots-container"></div>
+        <span class="Names"></span>
+    </div>
+    </template>
+
+    <div id="zoom-overlay" class="hidden">
+    <img id="zoomed-image" alt="zoomed view">
+    </div>
+
+<script>// Array of images per card
+const cardImages = [
+   { name: "", image: "images/IMG_8146.jpeg" }, 
+   { name: "", image: "images/IMG_8147.jpeg" },  
+   { name: "", image: "images/IMG_8148.jpeg" },  
+   { name: "", image: "images/IMG_8149.jpeg" },  
+   { name: "", image: "images/IMG_8150.jpeg" },  
+   { name: "", image: "images/IMG_8151.jpeg" },  
+   { name: "", image: "images/IMG_8152.jpeg" },  
+   { name: "", image: "images/IMG_8153.jpeg" },  
+   { name: "", image: "images/IMG_8154.jpeg" },  
+   { name: "", image: "images/IMG_8157.jpeg" },  
+   { name: "", image: "images/IMG_8158.jpeg" },  
+   { name: "", image: "images/IMG_8172.jpeg" },  
+   { name: "", image: "images/IMG_8173.jpeg" },  
+   { name: "", image: "images/IMG_8174.jpeg" },  
+   { name: "", image: "images/IMG_8175.jpeg" },  
+   { name: "", image: "images/IMG_8176.jpeg" },  
+   { name: "", image: "images/IMG_8183.jpeg" },  
+   { name: "", image: "images/IMG_8184.jpeg" },  
+   { name: "", image: "images/IMG_8185.jpeg" },  
+   { name: "", image: "images/IMG_8186.jpeg" },  
+   { name: "", image: "images/IMG_8187.jpeg" },  
+   { name: "", image: "images/80.jpeg" },  
+   { name: "", image: "images/2.jpeg" },  
+   { name: "", image: "images/3.jpeg" },  
+   { name: "", image: "images/4.jpeg" },  
+   { name: "", image: "images/5.jpeg" },  
+   { name: "", image: "images/6.jpeg" },  
+   { name: "", image: "images/7.jpeg" },  
+   { name: "", image: "images/8.jpeg" },  
+   { name: "", image: "images/9.jpeg" },  
+   { name: "", image: "images/10.jpeg" },  
+   { name: "", image: "images/11.jpeg" },  
+   { name: "", image: "images/12.jpeg" },  
+   { name: "", image: "images/13.jpeg" },  
+   { name: "", image: "images/14.jpeg" },
+   { name: "", image: "images/15.jpeg" },
+   { name: "", image: "images/16.jpeg" },
+   { name: "", image: "images/17.jpeg" },
+   { name: "", image: "images/18.jpeg" },
+   { name: "", image: "images/19.jpeg" },
+   { name: "", image: "images/20.jpeg" },
+   { name: "", image: "images/21.jpeg" },
+   { name: "", image: "images/22.jpeg" },
+   { name: "", image: "images/23.jpeg" },
+   { name: "", image: "images/24.jpeg" },
+   { name: "", image: "images/25.jpeg" },
+   { name: "", image: "images/26.jpeg" },
+   { name: "", image: "images/27.jpeg" },  
+    
+
+    // Add more arrays for new cards
+];
+
+// Get template and container
+const template = document.getElementById("card-template");
+const container = document.querySelector(".CATEGORIES");
+
+// Zoom elements
+const zoomOverlay = document.getElementById('zoom-overlay');
+const zoomedImage = document.getElementById('zoomed-image');
+
+// Build each card dynamically
+cardImages.forEach(item => {
+  const clone = template.content.cloneNode(true);
+
+  const img = clone.querySelector(".main-image");
+  const name = clone.querySelector(".Names");
+
+  img.src = item.image;
+  name.textContent = item.name;
+
+  // Zoom on click
+  img.addEventListener('click', () => {
+    zoomedImage.src = img.src;
+    zoomOverlay.classList.remove('hidden');
+  });
+
+  container.appendChild(clone);
+});
+
+// Close zoom overlay
+zoomOverlay.addEventListener('click', () => {
+  zoomOverlay.classList.add('hidden');
+  zoomedImage.src = '';
+});
+
+
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // only add active if not already added
+        if (!entry.target.classList.contains("active")) {
+          // small delay for stagger effect
+          setTimeout(() => {
+            entry.target.classList.add("active");
+          }, 50); // can adjust delay
+        }
+      } else {
+        entry.target.classList.remove("active");
+      }
+    });
+  },
+  {
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px"
+  }
+);
+
+reveals.forEach(reveal => observer.observe(reveal));
+
+</script>
+</body>
+</html>
