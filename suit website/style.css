@@ -87,6 +87,8 @@ padding: 10px;}
 p{margin-bottom: 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     line-height: 1.5;
+    margin: 8px;
+    text-align: justify;
 }
 
 h2.store{margin-bottom: 5%;
@@ -234,3 +236,5 @@ th, td {
   
 }
 
+.Island{ text-align: center;}
+.store{ margin: 15px;}
